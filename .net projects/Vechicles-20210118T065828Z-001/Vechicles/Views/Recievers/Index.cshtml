@@ -1,0 +1,34 @@
+﻿@model Vechicles.ViewModels.Recievers.IndexVM
+@using Vechicles.Entities;
+@{
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend class="bold">Package</legend>
+    <p>@Model.List.Package</p>
+</fieldset>
+
+<a href="/Recievers/Create?id=@Model.List.Id">New</a>
+<fieldset>
+    <legend>Recievers</legend>
+
+    <div class="grid">
+        <div class="row">
+            <div class="col-1 bold">FirstName</div>
+            <div class="col-1 bold">LastName</div>
+            <div class="col-3 bold"></div>
+        </div>
+        @foreach (var item in Model.Recievers)
+        {
+            <div class="row">
+                <div class="col-1">@item.FirstName</div>
+                <div class="col-1">@item.LastName</div>
+                <div class="col-3">
+                    <a href="/Recievers/Edit?id=@item.Id">edit</a>
+                    <a href="/Recievers/Delete?id=@item.Id">delete</a>
+                </div>
+            </div>
+        }
+    </div>
+</fieldset>

@@ -1,0 +1,25 @@
+﻿@using Vechicles.ViewModels.VehiclesModel
+@model VehicleModel
+
+    @{
+        Layout = "~/Views/Shared/_Site.cshtml";
+    }
+
+
+    <div class="grid">
+        <div class="col-2">
+            <p style="text-align:center;font-size:24px;">
+                <br />Site:Vehicles
+                <br />Used setings: Visual Studio and SQL
+                <br />This site is for delivering a shipments.
+            </p>
+        </div>
+    </div>
+    
+@Html.DropDownList("Type",
+new SelectList(Enum.GetValues(typeof(VehicleModel.Vehicle))),
+"Select vechicle",
+new { @class = "form-control" })
+   
+
+  

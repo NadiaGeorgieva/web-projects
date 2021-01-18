@@ -1,0 +1,69 @@
+﻿@model Vechicles.ViewModels.Shipments.CreateVM
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend>Create Shipment</legend>
+
+    <form action="/Shipments/Create" method="post">
+        <div class="grid">
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Package)
+                </div>
+                <div class="col-2" >
+                    @Html.TextBoxFor(m => m.Package,new  {  style="width:450px"})
+                </div>
+                <div class="col-3">
+                    @Html.ValidationMessageFor(m => m.Package)
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.From)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.From ,new  {  style="width:450px"})
+                </div>
+                <div class="col-3">
+                    @Html.ValidationMessageFor(m => m.From)
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Destination)
+                </div>
+                <div class="col-2">
+                    @Html.TextAreaFor(m => m.Destination ,new  {  style="width:450px;height:80px"})
+                </div>
+                <div class="col-3">
+                    @Html.ValidationMessageFor(m => m.Destination)
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.PriceOfPacket)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.PriceOfPacket ,new  {  style="width:450px"})
+                </div>
+                <div class="col-3">
+                    @Html.ValidationMessageFor(m => m.PriceOfPacket)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-3">
+                    <input class="right" type="submit" value="Save" />
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>
+

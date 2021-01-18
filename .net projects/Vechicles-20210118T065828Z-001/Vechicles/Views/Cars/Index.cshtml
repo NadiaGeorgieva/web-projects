@@ -1,0 +1,31 @@
+﻿@using Vechicles.Entities;
+@{
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<a href="/Cars/Create">New</a>
+<fieldset>
+    <legend>My Car Lists</legend>
+
+    <div class="grid">
+        <div class="row">
+            <div class="col-1 bold">Brand</div>
+            <div class="col-1 bold">Color</div>
+            <div class="col-1 bold">FullDescription</div>
+            <div class="col-1 bold"></div>
+        </div>
+        @foreach (var item in (List<Car>)ViewData["items"])
+        {
+            <div class="row">
+                <div class="col-1">@item.Brand</div>
+                <div class="col-1">@item.Color</div>
+                <div class="col-1">@item.FullDescription</div>
+                <div class="col-3">
+
+                    <a href="/Cars/Edit?id=@item.Id">edit</a>
+                    <a href="/Cars/Delete?id=@item.Id">delete</a>
+                </div>
+            </div>
+        }
+    </div>
+</fieldset>

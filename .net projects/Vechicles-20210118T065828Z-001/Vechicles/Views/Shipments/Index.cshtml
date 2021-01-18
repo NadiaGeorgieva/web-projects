@@ -1,0 +1,63 @@
+﻿@using Vechicles.Entities;
+@{
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<a href="/Shipments/Create">New</a>
+<fieldset>
+    <legend>My Shipments</legend>
+
+    <div class="grid">
+        <div class="row">
+            <div class="col-1 bold">Package</div>
+            <div class="col-1 bold">From</div>
+            <div class="col-1 bold">Destination</div>
+            <div class="col-1 bold">PriceOfPackage</div>
+            <div class="col-1 bold"></div>
+        </div>
+        @foreach (var item in (List<Shipment>)ViewData["items"])
+        {
+    <div class="row">
+        <div class="col-1">@item.Package</div>
+        <div class="col-1">@item.From</div>
+        <div class="col-1">@item.Destination</div>
+        <div class="col-1">@item.PriceOfPacket</div>
+        <div class="col-3">
+            <a href="/Shipments/Share?toDoListId=@item.Id">share</a>
+            <a href="/Recievers/Index?toDoListId=@item.Id">details</a>
+            <a href="/Shipments/Edit?id=@item.Id">edit</a>
+            <a href="/Shipments/Delete?id=@item.Id">delete</a>
+        </div>
+    </div>
+        }
+    </div>
+
+</fieldset>
+
+
+<fieldset>
+    <legend>Shared Shipments</legend>
+
+    <div class="grid">
+        <div class="row">
+            <div class="col-1 bold">Package</div>
+            <div class="col-1 bold">From</div>
+            <div class="col-1 bold">Destination</div>
+            <div class="col-1 bold">PriceOfPackage</div>
+        </div>
+        @foreach (var item in (List<Shipment>)ViewData["Shared"])
+        {
+    <div class="row">
+        <div class="col-1">@item.Package</div>
+        <div class="col-1">@item.From</div>
+        <div class="col-1">@item.Destination</div>
+        <div class="col-1">@item.PriceOfPacket</div>
+        <div class="col-3">
+            <a href="/Recievers/Index?toDoListId=@item.Id">details</a>
+        </div>
+    </div>
+        }
+    </div>
+
+</fieldset>
+

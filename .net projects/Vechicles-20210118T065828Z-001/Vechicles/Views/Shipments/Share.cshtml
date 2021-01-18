@@ -1,0 +1,46 @@
+﻿@model Vechicles.ViewModels.Shipments.ShareVM
+
+@{
+    ViewBag.Title = "Share";
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend>Shipments</legend>
+
+    <div>
+        <b>From:</b> @Model.List.From
+    </div>
+    <div>
+        <b>Destination:</b> @Model.List.Destination
+    </div>
+</fieldset>
+
+<fieldset>
+    <legend>Shared with</legend>
+
+    @foreach (var share in Model.Shares)
+    {
+        <div>@share.User.FirstName @share.User.LastName (@share.User.Username)</div>
+    }
+
+</fieldset>
+
+<fieldset>
+    <legend>Share</legend>
+
+    <form action="/Shipments/Share" method="post">
+        <input type="hidden" name="toDoListId" value="@Model.List.Id" />
+        <select name="userId">
+            @foreach (var user in Model.Users)
+            {
+                <option value="@user.Id">
+                    @user.FirstName @user.LastName (@user.Username)
+                </option>
+            }
+        </select>
+
+        <input type="submit" value="Share" />
+    </form>
+</fieldset>
+

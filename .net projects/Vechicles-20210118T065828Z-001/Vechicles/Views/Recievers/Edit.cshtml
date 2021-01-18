@@ -1,0 +1,44 @@
+﻿@model Vechicles.ViewModels.Recievers.EditVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend>Edit Reciever</legend>
+
+    <form action="/Recievers/Edit" method="post">
+        @Html.HiddenFor(m => m.Id)
+        @Html.HiddenFor(m => m.OwnerListId)
+        <div class="grid">
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.FirstName)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.FirstName)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.FirstName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.LastName)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.LastName)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.LastName)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input class="right" type="submit" value="Save" />
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>

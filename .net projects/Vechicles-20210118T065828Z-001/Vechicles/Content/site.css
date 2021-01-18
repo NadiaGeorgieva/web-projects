@@ -1,0 +1,67 @@
+﻿.grid {
+    clear: both;
+    display: block;
+}
+
+    .grid input[type=text] {
+        width: 100%;
+    }
+
+    .grid input[type=password] {
+        width: 100%;
+    }
+
+    .grid .row .col-1 {
+        display: inline-block;
+        width: 100px;
+    }
+
+    .grid .row .col-2 {
+        display: inline-block;
+        width: 200px;
+        
+    }
+
+    .grid .row .col-3 {
+        display: inline-block;
+        width: 300px;
+    }
+
+.body {
+    clear: both;
+    display: block;
+    padding: 20px;
+  
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.menu ul {
+    clear: both;
+    display: block;
+ 
+}
+
+    .menu ul li {
+        float: left;
+        margin: 0px 10px;
+        list-style: none;    
+       
+    }
+
+        .menu ul li a {
+            text-decoration: none;
+
+            color: blue;
+            font-size: 18px;
+        }
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}

@@ -1,0 +1,56 @@
+﻿@model Vechicles.ViewModels.Cars.EditVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend>Edit Car</legend>
+
+    <form action="/Cars/Edit" method="post">
+        @Html.HiddenFor(m => m.Id)
+        <div class="grid">
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Brand)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.Brand)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.Brand)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Color)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.Color)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.Color)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.FullDescription)
+                </div>
+                <div class="col-2">
+                    @Html.TextAreaFor(m => m.FullDescription)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.FullDescription)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input class="right" type="submit" value="Save" />
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>
+
+

@@ -1,0 +1,60 @@
+﻿@using Vechicles.Entities
+@{
+    User loggedUser = Session["loggedUser"] == null
+                                ? null
+                                : (User)Session["loggedUser"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="/Content/site.css" rel="stylesheet" />
+</head>
+<body style="  background-color:hotpink;">
+    <div>
+        <img src="~/Content/img.jpg" style="width:50%; display: block;
+  margin-left: auto;
+  margin-right: auto;" alt="Alternate Text" />
+        <h1 style="text-align:center;font-family:'Comic Sans MS'">Online package reciever</h1>
+        <div class="right" style="padding-right:50px;">Hello, @(loggedUser == null ? "Annonymous" : loggedUser.Username)</div>
+    </div>
+    <div class="menu ">
+        <ul>
+            <li>
+                <a href="/Home/Index">Home</a>
+            </li>
+            <li>
+                <a href="/Users/Index">Users</a>
+            </li>
+            <li>
+                <a href="/Drivers/Index">Drivers</a>
+            </li>
+            <li>
+                <a href="/Cars/Index">Cars</a>
+            </li>
+            <li>
+                <a href="/Shipments/Index">Shipments</a>
+            </li>
+            <li>
+                @if (loggedUser == null)
+                {
+                    <a href="/Home/Login">Login</a>
+                }
+                else
+                {
+                    <a href="/Home/Logout">Logout</a>
+                }
+            </li>
+        </ul>
+    </div>
+    
+    <div class="body">
+        <hr style=" border: 2px solid green;">
+        @RenderBody()
+    </div> 
+    
+</body>
+</html>

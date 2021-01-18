@@ -1,0 +1,45 @@
+﻿@model Vechicles.ViewModels.Home.LoginVM
+@{
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend>Login</legend>
+
+    <form action="/Home/Login" method="post">
+        <div class="grid">
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Username)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.Username)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.Username)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Password)
+                </div>
+                <div class="col-2">
+                    @Html.PasswordFor(m => m.Password)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.Password)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    @Html.ValidationMessage("AuthError")
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input class="right" type="submit" value="Login" />
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>

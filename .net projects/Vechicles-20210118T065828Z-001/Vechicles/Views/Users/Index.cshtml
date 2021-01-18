@@ -1,0 +1,32 @@
+﻿@using Vechicles.Entities;
+@{
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<a href="/Users/Create">New</a>
+<fieldset>
+    <legend>Users</legend>
+
+    <div class="grid">
+        <div class="row">
+            <div class="col-1 bold">Username</div>
+            <div class="col-1 bold">First Name</div>
+            <div class="col-1 bold">Last Name</div>
+            <div class="col-1 bold"></div>
+        </div>
+        @foreach (var item in (List<User>)ViewData["items"])
+        {
+            <div class="row">
+                <div class="col-1">@item.Username</div>
+                <div class="col-1">@item.FirstName</div>
+                <div class="col-1">@item.LastName</div>
+                <div class="col-1">
+                    <a href="/Users/Edit?id=@item.Id">edit</a>
+                    <a href="/Users/Delete?id=@item.Id">delete</a>
+                </div>
+            </div>
+        }
+    </div>
+
+</fieldset>
+

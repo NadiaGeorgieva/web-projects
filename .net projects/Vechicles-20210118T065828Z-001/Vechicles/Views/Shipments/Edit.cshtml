@@ -1,0 +1,65 @@
+﻿@model Vechicles.ViewModels.Shipments.EditVM
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Site.cshtml";
+}
+
+<fieldset>
+    <legend>Edit Shipment</legend>
+
+    <form action="/Shipments/Edit" method="post">
+        @Html.HiddenFor(m => m.Id)
+        <div class="grid">
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Package)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.Package)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.Package)
+                </div>
+            </div>
+                <div class="col-1">
+                    @Html.LabelFor(m => m.From)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.From)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.From)
+                </div>
+            </div>
+           
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.Destination)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.Destination)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.Destination)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    @Html.LabelFor(m => m.PriceOfPacket)
+                </div>
+                <div class="col-2">
+                    @Html.TextBoxFor(m => m.PriceOfPacket)
+                </div>
+                <div class="col-2">
+                    @Html.ValidationMessageFor(m => m.PriceOfPacket)
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                    <input class="right" type="submit" value="Save" />
+                </div>
+            </div>
+        </div>
+    </form>
+</fieldset>
